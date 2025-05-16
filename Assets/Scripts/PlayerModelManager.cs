@@ -24,7 +24,7 @@ public class PlayerModelManager : MonoBehaviour
     public float screenH;
 
     public float movementMultiplier = 1.0f;
-
+    public float confidenceThreshold = 0.5f;
 
 
 
@@ -54,7 +54,12 @@ public class PlayerModelManager : MonoBehaviour
             float x = (xp - screenW / 2) / screenW * movementMultiplier;
             float y = (yp - screenH / 2) / screenH * movementMultiplier;
 
-            if(i > CharacterParts.Length - 1)
+            if(bodyPart.prob < confidenceThreshold)
+            {
+                continue;
+            }
+
+            if (i > CharacterParts.Length - 1)
             {
                 continue;
             }
