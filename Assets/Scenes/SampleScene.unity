@@ -293,8 +293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inferenceController: {fileID: 443253947}
-  positionMultiplierX: 0.01
-  positionMultiplierY: 0.01
+  screenW: 800
+  screenH: 600
+  movementMultiplier: 10
   head:
     gameObject: {fileID: 2106280128}
     index: 0
@@ -1172,7 +1173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 5022602860645237092, guid: ec27d883dd1048146b5a736a7a5e201d, type: 3}
-  useNCHW: 1
+  useNCHW: 0
   workerType: 256
   heatmapLayerIndex: 0
   offsetsLayerIndex: 1
