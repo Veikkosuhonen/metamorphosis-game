@@ -44,6 +44,28 @@ public class InferenceController : MonoBehaviour
     private bool mirrorScreen = false; // Flag to check if the screen is mirrored
     private Vector2Int offset; // Offset used when cropping the input image
 
+
+
+    //just to help with dev since the list given by pose does not have any labels, just a list of floats
+    public string[] indexToBodyPartName = new string[] {
+            "nose",
+            "leftEye",
+            "rightEye",
+            "leftEar",
+            "rightEar",
+            "leftShoulder",
+            "rightShoulder",
+            "leftElbow",
+            "rightElbow",
+            "leftWrist",
+            "rightWrist",
+            "leftHip",
+            "rightHip",
+            "leftKnee",
+            "rightKnee",
+            "leftAnkle",
+            "rightAnkle"
+        };
     private HumanPose2D[] humanPoses;
 
 
