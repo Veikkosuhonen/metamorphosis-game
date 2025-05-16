@@ -18,8 +18,9 @@ public class PlayerModelManager : MonoBehaviour
     //This reference allows to read the HumanPose2D as well as many other things =)
     public InferenceController inferenceController;
 
-    public GameObject head;
 
+
+    public CharacterPart head;
 
     //upper body
     public CharacterPart wrist_l;
@@ -52,6 +53,9 @@ public class PlayerModelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float x = inferenceController.humanPoses[0].bodyParts[0].coordinates[0];
+        float y = inferenceController.humanPoses[0].bodyParts[0].coordinates[1];
+
+        head.gameObject.transform.position = new Vector3(x, y, head.gameObject.transform.position.z);
     }
 }

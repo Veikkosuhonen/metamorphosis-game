@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91078400}
   - component: {fileID: 91078399}
+  - component: {fileID: 91078401}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -167,6 +168,58 @@ Transform:
   - {fileID: 333233028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91078401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91078398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034dc1bffdc6c724a98add2e68efd2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inferenceController: {fileID: 443253947}
+  head:
+    gameObject: {fileID: 333233027}
+    index: 0
+  wrist_l:
+    gameObject: {fileID: 333233027}
+    index: 0
+  elbow_l:
+    gameObject: {fileID: 0}
+    index: 0
+  shoulder_l:
+    gameObject: {fileID: 0}
+    index: 0
+  wrist_r:
+    gameObject: {fileID: 0}
+    index: 0
+  elbow_r:
+    gameObject: {fileID: 0}
+    index: 0
+  shoulder_r:
+    gameObject: {fileID: 0}
+    index: 0
+  foot_l:
+    gameObject: {fileID: 0}
+    index: 0
+  knee_l:
+    gameObject: {fileID: 0}
+    index: 0
+  hip_l:
+    gameObject: {fileID: 0}
+    index: 0
+  foot_r:
+    gameObject: {fileID: 0}
+    index: 0
+  knee_r:
+    gameObject: {fileID: 0}
+    index: 0
+  hip_r:
+    gameObject: {fileID: 0}
+    index: 0
 --- !u!1 &142265247
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +996,24 @@ MonoBehaviour:
   maxPoses: 20
   useMultiPoseDecoding: 0
   confidenceThreshold: 0.5
+  indexToBodyPartName:
+  - nose
+  - leftEye
+  - rightEye
+  - leftEar
+  - rightEar
+  - leftShoulder
+  - rightShoulder
+  - leftElbow
+  - rightElbow
+  - leftWrist
+  - rightWrist
+  - leftHip
+  - rightHip
+  - leftKnee
+  - rightKnee
+  - leftAnkle
+  - rightAnkle
 --- !u!4 &443253948
 Transform:
   m_ObjectHideFlags: 0
@@ -2902,6 +2973,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5164635930939511131, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5205739807772097574, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
       propertyPath: m_Size
       value: 0.5896033
@@ -3044,7 +3119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6308305111044764376, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 138.20001
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 6763717049935485887, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
       propertyPath: m_Name
