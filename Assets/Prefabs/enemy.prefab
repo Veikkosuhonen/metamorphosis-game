@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1464200256505532385
+--- !u!1001 &4222676124677953930
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a95cc90716be84249aa191817ee565da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a95cc90716be84249aa191817ee565da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a95cc90716be84249aa191817ee565da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a95cc90716be84249aa191817ee565da, type: 3}
       propertyPath: m_LocalRotation.y
@@ -55,25 +55,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a95cc90716be84249aa191817ee565da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1923201606243593106}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a95cc90716be84249aa191817ee565da, type: 3}
---- !u!1 &1770068249321501360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a95cc90716be84249aa191817ee565da, type: 3}
-  m_PrefabInstance: {fileID: 1464200256505532385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1923201606243593106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770068249321501360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b57f76469e29463587bbe3e74e45c8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
