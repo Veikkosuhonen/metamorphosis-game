@@ -39,13 +39,13 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Enemy collided with player!");
-        if (collision.transform.parent.gameObject.CompareTag("Player"))
+        if ((bool)(collision?.transform?.parent?.gameObject?.CompareTag("Player"))) // matias pls fix
         {
             Rigidbody rbody = gameObject.GetComponent<Rigidbody>();
             dead = true;
             rbody.useGravity = true;
             rbody.isKinematic = false;
-
+            GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
         }
     }
 }
