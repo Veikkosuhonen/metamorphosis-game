@@ -12,8 +12,6 @@ public class PlayerModelManager : MonoBehaviour
         //gameobject to control
         [Tooltip("GameObject to control")]
         public GameObject gameObject;
-
-      
     }
     //This reference allows to read the HumanPose2D as well as many other things =)
     public InferenceController inferenceController;
@@ -46,7 +44,8 @@ public class PlayerModelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < inferenceController.humanPoses[0].bodyParts.Length; i++) { 
+        for (int i = 0; i < inferenceController.humanPoses[0].bodyParts.Length; i++)
+        {
             BodyPart2D bodyPart = inferenceController.humanPoses[0].bodyParts[i];
             float xp = bodyPart.coordinates[0];
             float yp = bodyPart.coordinates[1];
@@ -54,7 +53,7 @@ public class PlayerModelManager : MonoBehaviour
             float x = (xp - screenW / 2) / screenW * movementMultiplier;
             float y = (yp - screenH / 2) / screenH * movementMultiplier;
 
-            if(bodyPart.prob < confidenceThreshold)
+            if (bodyPart.prob < confidenceThreshold)
             {
                 continue;
             }
@@ -69,7 +68,11 @@ public class PlayerModelManager : MonoBehaviour
                 continue;
             }
 
-            CharacterParts[i].gameObject.transform.position = new Vector3(x, y, CharacterParts[i].gameObject.transform.position.z);
+            CharacterParts[i].gameObject.transform.position = Vector3.Lerp(
+                CharacterParts[i].gameObject.transform.position,
+                new Vector3(x, y, CharacterParts[i].gameObject.transform.position.z),
+                Time.deltaTime * 10f
+            );
         }
        
      
