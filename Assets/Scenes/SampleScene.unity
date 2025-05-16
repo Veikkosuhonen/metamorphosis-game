@@ -298,43 +298,24 @@ MonoBehaviour:
   movementMultiplier: 10
   head:
     gameObject: {fileID: 2106280128}
-    index: 0
-  wrist_l:
-    gameObject: {fileID: 1654066737}
-    index: 0
-  elbow_l:
-    gameObject: {fileID: 987511306}
-    index: 0
-  shoulder_l:
-    gameObject: {fileID: 828027059}
-    index: 0
-  wrist_r:
-    gameObject: {fileID: 720778118}
-    index: 0
-  elbow_r:
-    gameObject: {fileID: 1435611216}
-    index: 0
-  shoulder_r:
-    gameObject: {fileID: 62982531}
-    index: 0
-  foot_l:
-    gameObject: {fileID: 0}
-    index: 0
-  knee_l:
-    gameObject: {fileID: 0}
-    index: 0
-  hip_l:
-    gameObject: {fileID: 0}
-    index: 0
-  foot_r:
-    gameObject: {fileID: 0}
-    index: 0
-  knee_r:
-    gameObject: {fileID: 0}
-    index: 0
-  hip_r:
-    gameObject: {fileID: 0}
-    index: 0
+  CharacterParts:
+  - gameObject: {fileID: 2106280128}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 828027059}
+  - gameObject: {fileID: 62982531}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 1654066737}
+  - gameObject: {fileID: 720778118}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
+  - gameObject: {fileID: 0}
 --- !u!1 &142265247
 GameObject:
   m_ObjectHideFlags: 0
