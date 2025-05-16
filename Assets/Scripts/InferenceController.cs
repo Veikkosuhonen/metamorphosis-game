@@ -30,7 +30,7 @@ public class InferenceController : MonoBehaviour
 
     [Header("Output Processing")]
     [SerializeField, Tooltip("Threshold for confidence score filtering, range: [0, 1]"), Range(0, 1f)]
-    private float scoreThreshold = 0.25f;
+    private float scoreThreshold = 0.5f;
     [SerializeField, Tooltip("Radius for Non-Maximum Suppression, range: [0, 200]"), Range(0, 200)]
     private int nmsRadius = 70;
     [Tooltip("Max number of poses to detect for multipose detection")]
