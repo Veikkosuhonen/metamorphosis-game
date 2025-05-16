@@ -19,6 +19,10 @@ public class PlayerModelManager : MonoBehaviour
     public InferenceController inferenceController;
 
 
+    //This is the multiplier for the position of the character parts
+    public float positionMultiplierX;
+    public float positionMultiplierY;
+
 
     public CharacterPart head;
 
@@ -53,8 +57,8 @@ public class PlayerModelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = inferenceController.humanPoses[0].bodyParts[0].coordinates[0];
-        float y = inferenceController.humanPoses[0].bodyParts[0].coordinates[1];
+        float x = inferenceController.humanPoses[0].bodyParts[0].coordinates[0] * positionMultiplierX;
+        float y = inferenceController.humanPoses[0].bodyParts[0].coordinates[1] * positionMultiplierY;
 
         head.gameObject.transform.position = new Vector3(x, y, head.gameObject.transform.position.z);
     }
