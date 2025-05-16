@@ -20,8 +20,10 @@ public class PlayerModelManager : MonoBehaviour
 
 
     //This is the multiplier for the position of the character parts
-    public float positionMultiplierX;
-    public float positionMultiplierY;
+    public float screenW;
+    public float screenH;
+
+    public float movementMultiplier = 1.0f;
 
 
     public CharacterPart head;
@@ -57,8 +59,11 @@ public class PlayerModelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = inferenceController.humanPoses[0].bodyParts[0].coordinates[0] * positionMultiplierX;
-        float y = inferenceController.humanPoses[0].bodyParts[0].coordinates[1] * positionMultiplierY;
+        float xp = inferenceController.humanPoses[0].bodyParts[0].coordinates[0];
+        float yp = inferenceController.humanPoses[0].bodyParts[0].coordinates[1];
+
+        float x = (xp - screenW / 2) / screenW * movementMultiplier;
+        float y = (yp - screenH / 2) / screenH * movementMultiplier;
 
         head.gameObject.transform.position = new Vector3(x, y, head.gameObject.transform.position.z);
     }
