@@ -66,7 +66,7 @@ public class InferenceController : MonoBehaviour
             "leftAnkle",
             "rightAnkle"
         };
-    private HumanPose2D[] humanPoses;
+    public HumanPose2D[] humanPoses;
 
 
     #endregion
@@ -105,6 +105,8 @@ public class InferenceController : MonoBehaviour
         UpdateHumanPoses(inputDims);
         uiController.UpdateUI(humanPoses.Length);
         humanPose2DVisualizer.UpdatePoseVisualizations(humanPoses, confidenceThreshold);
+        Debug.Log($"Poses Detected: {humanPoses.Length}");
+        Debug.Log(humanPoses);
     }
 
     #endregion
