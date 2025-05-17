@@ -18,7 +18,7 @@ public class PlayerModelManager : MonoBehaviour
     }
     public List<PartUpgrade> unlockedUpgrades = new List<PartUpgrade>();
 
-
+    
     [System.Serializable]
     public struct CharacterPart
     {
@@ -63,10 +63,25 @@ public class PlayerModelManager : MonoBehaviour
     void Update()
     {
         UpdatePlayerAbsolute();
-       
+        pointHandForward();
      
     }
 
+
+    private void pointHandForward()
+    {
+        float leftHandX = inferenceController.humanPoses[0].bodyParts[9].coordinates[0];
+        float leftHandY = inferenceController.humanPoses[0].bodyParts[9].coordinates[1];
+
+        float leftElbowX = inferenceController.humanPoses[0].bodyParts[7].coordinates[0];
+        float leftElbowY = inferenceController.humanPoses[0].bodyParts[7].coordinates[1];
+
+        Vector2 leftHand = new Vector2(leftHandX, leftHandY);
+        Vector2 leftElbow = new Vector2(leftElbowX, leftElbowY);
+        Vector2 handForward = leftHand - leftElbow;
+        
+        CharacterParts[9].gameObject.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(handForward.y, handForward.x) * Mathf.Rad2Deg);
+    }
 
     private void UpdatePlayerAbsolute()
     {
