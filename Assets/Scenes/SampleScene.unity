@@ -786,8 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   hpDisplay: {fileID: 29709895}
-  hurtSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: d051652c52dd5403fb401bae69de7ad0, type: 3}
+  deathSound: {fileID: 8300000, guid: f9336d20267154642b6464a143041791, type: 3}
 --- !u!114 &91078403
 MonoBehaviour:
   m_ObjectHideFlags: 0
