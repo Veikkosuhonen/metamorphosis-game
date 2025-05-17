@@ -19,8 +19,8 @@ public class PlayerXP : MonoBehaviour
     {
         // Add XP to the player
         Debug.Log("Enemy defeated! Gained XP.");
+        StartCoroutine(ChangeXpAfterDelay(1, 0.5f));
         changeXp(1);
-
     }
 
     public void changeXp(int amount)
@@ -30,5 +30,11 @@ public class PlayerXP : MonoBehaviour
         // Play the XP sound
         audioSource.PlayOneShot(xpSound);
         playerXP += 1;
+    }
+
+    private IEnumerator ChangeXpAfterDelay(int amount, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        changeXp(amount);
     }
 }
