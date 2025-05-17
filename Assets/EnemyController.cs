@@ -38,8 +38,8 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Enemy collided with player!");
-        if ((bool)(collision?.transform?.parent?.gameObject?.CompareTag("Player"))) // matias pls fix
+        
+        if (collision.gameObject.CompareTag("Wrist") == true)
         {
             Rigidbody rbody = gameObject.GetComponent<Rigidbody>();
             dead = true;
