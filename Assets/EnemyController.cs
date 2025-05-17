@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     public bool dead = false;
     public float speed = 10.0f;
     public float upDownMovement = 3.0f;
+    public float initialY = 0.0f;
+
 
     private AudioSource audioSource;
     public AudioClip[] deathSounds;
@@ -15,6 +17,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialY = gameObject.transform.position.y;
         audioSource = GetComponent<AudioSource>();
         levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
@@ -38,8 +41,8 @@ public class EnemyController : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
-        transform.position -= Vector3.right * speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time + transform.position.x) * upDownMovement, 0.0f);
+        transform.position += gameObject.transform.forward * speed * Time.deltaTime;
+        //transform.position = new Vector3(transform.position.x, initialY + Mathf.Sin(Time.time + transform.position.x) * upDownMovement, 0.0f);
     }
 
     private void OnTriggerEnter(Collider other)

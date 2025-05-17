@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     public float lastSpawn = 0.0f;
     public float spawnRate = 5.0f;
+    public float randomOffset;
+
 
     private LevelController levelController;
     
@@ -30,10 +33,11 @@ public class EnemySpawner : MonoBehaviour
 
 
         //spawn enemy when spawnRate is reached
-        if (Time.time > lastSpawn + spawnRate)
+        if (Time.time > lastSpawn + spawnRate + randomOffset)
         {
             SpawnEnemy();
             lastSpawn = Time.time;
+            randomOffset = Random.Range(-2.0f, 2.0f);
         }
     }
 
@@ -41,5 +45,6 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyController>().speed = spawnedEnemySpeed;
+        enemy.transform.forward = gameObject.transform.forward;
     }
 }
