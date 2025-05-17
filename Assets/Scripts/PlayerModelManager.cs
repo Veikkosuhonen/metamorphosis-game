@@ -38,7 +38,8 @@ public class PlayerModelManager : MonoBehaviour
     public float screenW;
     public float screenH;
 
-    public float movementMultiplier = 1.0f;
+    public float movementMultiplierX = 1.0f;
+    public float movementMultiplierY = 1.0f;
     public float confidenceThreshold;
 
 
@@ -121,8 +122,8 @@ public class PlayerModelManager : MonoBehaviour
             float xp = bodyPart.coordinates[0];
             float yp = bodyPart.coordinates[1];
 
-            float x = (xp - screenW / 2) / screenW * movementMultiplier;
-            float y = (yp - screenH / 2) / screenH * movementMultiplier;
+            float x = (xp - screenW / 2) / screenW * movementMultiplierX;
+            float y = (yp - screenH / 2) / screenH * movementMultiplierY;
 
             if (bodyPart.prob < confidenceThreshold)
             {

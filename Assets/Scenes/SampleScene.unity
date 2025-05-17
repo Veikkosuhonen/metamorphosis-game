@@ -553,7 +553,8 @@ MonoBehaviour:
   inferenceController: {fileID: 443253947}
   screenW: 800
   screenH: 600
-  movementMultiplier: 15
+  movementMultiplierX: 20
+  movementMultiplierY: 30
   confidenceThreshold: 0.5
   CharacterParts:
   - gameObject: {fileID: 91078398}
@@ -5629,8 +5630,8 @@ Transform:
   m_GameObject: {fileID: 1708856545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
-  m_LocalScale: {x: 100, y: 10, z: 100}
+  m_LocalPosition: {x: 0, y: -30, z: 90}
+  m_LocalScale: {x: 200, y: 10, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
