@@ -63,24 +63,26 @@ public class PlayerModelManager : MonoBehaviour
     void Update()
     {
         UpdatePlayerAbsolute();
-        pointHandForward();
-     
+        pointHandForward(9, 7); //left
+        pointHandForward(10, 8); //right
+
     }
 
 
-    private void pointHandForward()
+
+    private void pointHandForward(int handIndex, int elbowIndex)
     {
-        float leftHandX = inferenceController.humanPoses[0].bodyParts[9].coordinates[0];
-        float leftHandY = inferenceController.humanPoses[0].bodyParts[9].coordinates[1];
+        float HandX = inferenceController.humanPoses[0].bodyParts[handIndex].coordinates[0];
+        float HandY = inferenceController.humanPoses[0].bodyParts[handIndex].coordinates[1];
 
-        float leftElbowX = inferenceController.humanPoses[0].bodyParts[7].coordinates[0];
-        float leftElbowY = inferenceController.humanPoses[0].bodyParts[7].coordinates[1];
+        float ElbowX = inferenceController.humanPoses[0].bodyParts[elbowIndex].coordinates[0];
+        float ElbowY = inferenceController.humanPoses[0].bodyParts[elbowIndex].coordinates[1];
 
-        Vector2 leftHand = new Vector2(leftHandX, leftHandY);
-        Vector2 leftElbow = new Vector2(leftElbowX, leftElbowY);
-        Vector2 handForward = leftHand - leftElbow;
+        Vector2 Hand = new Vector2(HandX, HandY);
+        Vector2 Elbow = new Vector2(ElbowX, ElbowY);
+        Vector2 handForward = Hand - Elbow;
         
-        CharacterParts[9].gameObject.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(handForward.y, handForward.x) * Mathf.Rad2Deg);
+        CharacterParts[handIndex].gameObject.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(handForward.y, handForward.x) * Mathf.Rad2Deg);
     }
 
     private void UpdatePlayerAbsolute()
