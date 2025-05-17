@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerXP : MonoBehaviour
 {
+    
+
     public void EnemyDefeated(EnemyController enemy)
     {
         // Add XP to the player

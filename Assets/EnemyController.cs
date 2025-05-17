@@ -45,7 +45,8 @@ public class EnemyController : MonoBehaviour
             dead = true;
             rbody.useGravity = true;
             rbody.isKinematic = false;
-            GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
+            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
+            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHp>().takeDamage(10);
         }
     }
 }
