@@ -78,6 +78,7 @@ public class EnemyController : MonoBehaviour
             rbody.isKinematic = false;
             GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
             PlayDeathSound();
+            rbody.freezeRotation = false;
         }
 
         if (collision.gameObject.CompareTag("Player") == true)

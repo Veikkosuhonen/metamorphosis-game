@@ -8,6 +8,9 @@ public class PlayerXP : MonoBehaviour
     public int levels = 0;
     public int playerXP = 0; // Player's XP
     public TextMeshProUGUI xpDisplay;
+
+    public TextMeshProUGUI scoreDisplay;
+    public int score = 0; // Player's score
     private AudioSource audioSource;
     public AudioClip xpSound;
 
@@ -26,10 +29,12 @@ public class PlayerXP : MonoBehaviour
 
     }
 
-    public void changeXp(int amount)
+    public void changeXp(int amount, bool playSound = true)
     {
         playerXP += amount;
         xpDisplay.text = "XP: " + playerXP.ToString();
+        score += amount;
+        scoreDisplay.text = "Score: " + score.ToString();
 
         if (playerXP >= (levels + 1) * 10)
         {
@@ -38,9 +43,10 @@ public class PlayerXP : MonoBehaviour
             levels++;
             playerXP = 0;
         }
+
         // Play the XP sound
-        audioSource.PlayOneShot(xpSound);
-        playerXP += 1;
+        if (playSound) audioSource.PlayOneShot(xpSound);
+
         levelController.difficulty += 1;
     }
 
@@ -48,5 +54,16 @@ public class PlayerXP : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         changeXp(amount);
+    }
+
+    private float lastChangeTime = 0.0f;
+    private void FixedUpdate()
+    {
+        // Add xp every second
+        if (Time.time - lastChangeTime >= 1.0f && levelController.currentLevelState == LevelController.LevelState.Playing)
+        {
+            changeXp(1, false);
+            lastChangeTime = Time.time;
+        }
     }
 }
