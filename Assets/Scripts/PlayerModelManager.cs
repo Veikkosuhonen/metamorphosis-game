@@ -32,13 +32,15 @@ public class PlayerModelManager : MonoBehaviour
     public CharacterPart[] CharacterParts;
 
 
-   
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Get the screen size
+        screenW = Screen.width;
+        screenH = Screen.height;
     }
 
     // Update is called once per frame
