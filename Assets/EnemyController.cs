@@ -25,6 +25,14 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
+        //this line of code is totally the best practise =)
+        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            return;
+            
+        }
+
         transform.position -= Vector3.right * speed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time + transform.position.x) * upDownMovement, transform.position.z);
     }
@@ -44,6 +52,12 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (dead)
+        {
+            return;
+        }
+
+        //this line of code is totally the best practise =)
+        if(GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
         {
             return;
         }

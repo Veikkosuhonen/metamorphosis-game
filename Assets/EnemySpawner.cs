@@ -19,6 +19,11 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        {
+            return;
+        }   
+
 
         //spawn enemy when spawnRate is reached
         if (Time.time > lastSpawn + spawnRate)

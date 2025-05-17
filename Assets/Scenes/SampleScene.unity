@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2521dfb2b158d410f9516bf7c1274de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels: 0
   playerXP: 0
   xpDisplay: {fileID: 827195614}
 --- !u!1 &142265247
@@ -4173,7 +4174,7 @@ GameObject:
   - component: {fileID: 1294952154}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

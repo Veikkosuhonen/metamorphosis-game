@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerXP : MonoBehaviour
 {
+    public int levels = 0;
     public int playerXP = 0; // Player's XP
     public TextMeshProUGUI xpDisplay;
 
@@ -20,5 +21,12 @@ public class PlayerXP : MonoBehaviour
     {
         playerXP += amount;
         xpDisplay.text = "XP: " + playerXP.ToString();
+
+        if(playerXP >= 10)
+        {
+            GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<LevelController>().startUpgrading();
+            Debug.Log("Level Up! time to start upgrading!");
+            levels++;
+        }
     }
 }
