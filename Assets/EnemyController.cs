@@ -51,8 +51,17 @@ public class EnemyController : MonoBehaviour
             rbody.useGravity = true;
             rbody.isKinematic = false;
             GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
-            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHp>().takeDamage(10);
             PlayDeathSound();
+        }
+
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
+            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHp>().takeDamage(15);
+        }
+
+        if (collision.gameObject.CompareTag("hurtable") == true)
+        {
+            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHp>().takeDamage(10);
         }
     }
 

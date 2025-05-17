@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 60590683}
   m_Layer: 0
   m_Name: knee_r (4)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 62982536}
   m_Layer: 0
   m_Name: shoulder_r (1)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 588514342}
   m_Layer: 0
   m_Name: knee_l (3)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2421,7 +2421,7 @@ GameObject:
   - component: {fileID: 828027064}
   m_Layer: 0
   m_Name: shoulder_l
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2555,7 +2555,7 @@ GameObject:
   - component: {fileID: 853972042}
   m_Layer: 0
   m_Name: hip_l (3)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3340,7 +3340,7 @@ GameObject:
   - component: {fileID: 987511311}
   m_Layer: 0
   m_Name: elbow_l
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3549,7 +3549,7 @@ GameObject:
   - component: {fileID: 1099502349}
   m_Layer: 0
   m_Name: hip_r (2)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3823,7 +3823,7 @@ GameObject:
   - component: {fileID: 1149096473}
   m_Layer: 0
   m_Name: foot_r (2)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4210,7 +4210,7 @@ GameObject:
   - component: {fileID: 1435611221}
   m_Layer: 0
   m_Name: elbow_r (1)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4788,7 +4788,7 @@ GameObject:
   - component: {fileID: 1729271546}
   m_Layer: 0
   m_Name: foot_l (3)
-  m_TagString: Untagged
+  m_TagString: hurtable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
