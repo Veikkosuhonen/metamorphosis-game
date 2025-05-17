@@ -752,8 +752,8 @@ MonoBehaviour:
   inferenceController: {fileID: 443253947}
   screenW: 800
   screenH: 600
-  movementMultiplier: 10
-  confidenceThreshold: 0.05
+  movementMultiplier: 30
+  confidenceThreshold: 0.5
   CharacterParts:
   - gameObject: {fileID: 91078398}
   - gameObject: {fileID: 0}
@@ -786,6 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   hpDisplay: {fileID: 29709895}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!114 &91078403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4544,7 +4546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PartUpgrade: 2
-  upgradeText: {fileID: 0}
+  upgradeText: {fileID: 457862671}
 --- !u!65 &1281301132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4710,7 +4712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PartUpgrade: 1
-  upgradeText: {fileID: 0}
+  upgradeText: {fileID: 1991528448}
 --- !u!65 &1297264131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4831,7 +4833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PartUpgrade: 3
-  upgradeText: {fileID: 0}
+  upgradeText: {fileID: 1853527395}
 --- !u!65 &1347252749
 BoxCollider:
   m_ObjectHideFlags: 0
