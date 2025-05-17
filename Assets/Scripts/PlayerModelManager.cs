@@ -8,12 +8,26 @@ using UnityEngine.Device;
 
 public class PlayerModelManager : MonoBehaviour
 {
+    public enum PartUpgrade
+    {
+        None,
+        Wolverine,
+        Teeth,
+        Spiky,
+        Horns
+    }
+    public List<PartUpgrade> unlockedUpgrades = new List<PartUpgrade>();
+
+
     [System.Serializable]
     public struct CharacterPart
     {
         //gameobject to control
         [Tooltip("GameObject to control")]
         public GameObject gameObject;
+
+
+
     }
     //This reference allows to read the HumanPose2D as well as many other things =)
     public InferenceController inferenceController;
