@@ -21,7 +21,7 @@ public class PlayerXP : MonoBehaviour
         // Add XP to the player
         Debug.Log("Enemy defeated! Gained XP.");
         StartCoroutine(ChangeXpAfterDelay(1, 0.5f));
-        changeXp(1);
+
     }
 
     public void changeXp(int amount)
