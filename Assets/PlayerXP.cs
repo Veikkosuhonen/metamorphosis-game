@@ -7,6 +7,13 @@ public class PlayerXP : MonoBehaviour
 {
     public int playerXP = 0; // Player's XP
     public TextMeshProUGUI xpDisplay;
+    private AudioSource audioSource;
+    public AudioClip xpSound;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void EnemyDefeated(EnemyController enemy)
     {
@@ -20,5 +27,8 @@ public class PlayerXP : MonoBehaviour
     {
         playerXP += amount;
         xpDisplay.text = "XP: " + playerXP.ToString();
+        // Play the XP sound
+        audioSource.PlayOneShot(xpSound);
+        playerXP += 1;
     }
 }
