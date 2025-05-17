@@ -620,8 +620,8 @@ MonoBehaviour:
   inferenceController: {fileID: 443253947}
   screenW: 800
   screenH: 600
-  movementMultiplier: 10
-  confidenceThreshold: 0.5
+  movementMultiplier: 15
+  confidenceThreshold: 0.1
   head:
     gameObject: {fileID: 2956901695736293191}
   CharacterParts:
