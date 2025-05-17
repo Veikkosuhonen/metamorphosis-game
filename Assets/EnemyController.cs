@@ -76,9 +76,14 @@ public class EnemyController : MonoBehaviour
             dead = true;
             rbody.useGravity = true;
             rbody.isKinematic = false;
+            rbody.freezeRotation = false;
+            Vector3 fnormal = collision.contacts[0].normal;
+            fnormal.z += Random.Range(-1.0f, 1.0f);
+
+            rbody.AddForce( fnormal * 10.0f, ForceMode.Impulse);
+            rbody.AddTorque(fnormal * 1.0f, ForceMode.Impulse);
             GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
             PlayDeathSound();
-            rbody.freezeRotation = false;
         }
 
         if (collision.gameObject.CompareTag("Player") == true)
