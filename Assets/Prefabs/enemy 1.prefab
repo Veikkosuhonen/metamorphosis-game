@@ -83,8 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b57f76469e29463587bbe3e74e45c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   speed: 15
-  upDownMovement: 2
+  upDownMovement: 1
 --- !u!54 &5214080981045859910
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
