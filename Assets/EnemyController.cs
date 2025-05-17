@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
         }
 
         transform.position -= Vector3.right * speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time + transform.position.x) * upDownMovement, transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time + transform.position.x) * upDownMovement, 0.0f);
     }
 
     private void OnTriggerEnter(Collider other)
