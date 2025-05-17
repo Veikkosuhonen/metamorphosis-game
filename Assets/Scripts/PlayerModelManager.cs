@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static PlayerModelManager;
+
 using UnityEngine.Device;
 
 public class PlayerModelManager : MonoBehaviour
@@ -55,8 +55,8 @@ public class PlayerModelManager : MonoBehaviour
     void Start()
     {
         // Get the screen size
-        screenW = Screen.width;
-        screenH = Screen.height;
+        screenW = UnityEngine.Screen.width;
+        screenH = UnityEngine.Screen.height;
     }
 
     // Update is called once per frame
