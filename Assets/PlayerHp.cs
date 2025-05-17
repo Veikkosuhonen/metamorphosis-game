@@ -10,11 +10,16 @@ public class PlayerHp : MonoBehaviour
     //reference to the textmeshpro text component
     public TextMeshProUGUI hpDisplay;
 
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         hpDisplay.text = "HP: " + hp.ToString();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -25,11 +30,15 @@ public class PlayerHp : MonoBehaviour
         {
             Debug.Log("Player is dead!");
             hpDisplay.text = "! YOU DIED !";
+            // Play the death sound
+            audioSource.PlayOneShot(deathSound);
 
         }
         else
         {
             hpDisplay.text = "HP: " + hp.ToString();
+            // Play the hurt sound
+            audioSource.PlayOneShot(hurtSound);
         }
     }
   
