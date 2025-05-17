@@ -148,6 +148,13 @@ public class PlayerModelManager : MonoBehaviour
 
 
     }
+
+    public void upgradeTo(PartUpgrade upgrade)
+    {
+
+        unlockedUpgrades.Add(upgrade);
+        Debug.Log(upgrade + " unlocked!");
+    }
 }
 
 

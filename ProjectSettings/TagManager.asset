@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wrist
   - hurtable
+  - upgrade
   layers:
   - Default
   - TransparentFX

@@ -1220,6 +1220,7 @@ GameObject:
   - component: {fileID: 245545402}
   - component: {fileID: 245545404}
   - component: {fileID: 245545403}
+  - component: {fileID: 245545405}
   m_Layer: 0
   m_Name: hand_r
   m_TagString: Wrist
@@ -1291,6 +1292,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.796734, y: 1.6381077, z: 1}
   m_Center: {x: 1.4197865, y: -0.0000004172325, z: 0}
+--- !u!114 &245545405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245545401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111ae9b1f27608a47beb878bb723cf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &365323796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,6 +3154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879519177}
+  - component: {fileID: 879519178}
   m_Layer: 0
   m_Name: UpgradeBoxes
   m_TagString: Untagged
@@ -3166,6 +3180,22 @@ Transform:
   - {fileID: 1347252747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879519178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879519176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598bf7a7eb1ec484cbd0419a43672af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePickers:
+  - {fileID: 1297264130}
+  - {fileID: 1281301131}
+  - {fileID: 1347252748}
 --- !u!114 &882156241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2445076462181341319, guid: b10bb37c28e5ef342931710ba93b9c71, type: 3}
@@ -4480,7 +4510,7 @@ GameObject:
   - component: {fileID: 1281301131}
   m_Layer: 0
   m_Name: Upgrade (2)
-  m_TagString: Untagged
+  m_TagString: upgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4513,7 +4543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 0
+  PartUpgrade: 2
   upgradeText: {fileID: 0}
 --- !u!65 &1281301132
 BoxCollider:
@@ -4646,7 +4676,7 @@ GameObject:
   - component: {fileID: 1297264130}
   m_Layer: 0
   m_Name: Upgrade (1)
-  m_TagString: Untagged
+  m_TagString: upgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4679,7 +4709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 0
+  PartUpgrade: 1
   upgradeText: {fileID: 0}
 --- !u!65 &1297264131
 BoxCollider:
@@ -4767,7 +4797,7 @@ GameObject:
   - component: {fileID: 1347252748}
   m_Layer: 0
   m_Name: Upgrade
-  m_TagString: Untagged
+  m_TagString: upgrade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4800,7 +4830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 0
+  PartUpgrade: 3
   upgradeText: {fileID: 0}
 --- !u!65 &1347252749
 BoxCollider:
@@ -5204,6 +5234,7 @@ GameObject:
   - component: {fileID: 1585916486}
   - component: {fileID: 1585916488}
   - component: {fileID: 1585916487}
+  - component: {fileID: 1585916489}
   m_Layer: 0
   m_Name: hand_l
   m_TagString: Wrist
@@ -5275,6 +5306,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1585916489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585916485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111ae9b1f27608a47beb878bb723cf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1588062938 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4556818524510064224, guid: b10bb37c28e5ef342931710ba93b9c71, type: 3}
