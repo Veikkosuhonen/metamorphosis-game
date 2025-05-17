@@ -11,11 +11,12 @@ public class EnemyController : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip[] deathSounds;
 
-
+    private LevelController levelController;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
     // Update is called once per frame
@@ -26,11 +27,15 @@ public class EnemyController : MonoBehaviour
             return;
         }
         //this line of code is totally the best practise =)
-        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        if (levelController.currentLevelState == LevelController.LevelState.Upgrading)
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             return;
-            
+
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
         transform.position -= Vector3.right * speed * Time.deltaTime;
@@ -57,7 +62,7 @@ public class EnemyController : MonoBehaviour
         }
 
         //this line of code is totally the best practise =)
-        if(GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        if(levelController.currentLevelState == LevelController.LevelState.Upgrading)
         {
             return;
         }

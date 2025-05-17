@@ -11,9 +11,11 @@ public class PlayerXP : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip xpSound;
 
+    private LevelController levelController;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
     public void EnemyDefeated(EnemyController enemy)
@@ -29,15 +31,17 @@ public class PlayerXP : MonoBehaviour
         playerXP += amount;
         xpDisplay.text = "XP: " + playerXP.ToString();
 
-        if(playerXP >= 10)
+        if (playerXP >= 10)
         {
-            GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<LevelController>().startUpgrading();
+            levelController.startUpgrading();
             Debug.Log("Level Up! time to start upgrading!");
             levels++;
+            playerXP = 0;
         }
         // Play the XP sound
         audioSource.PlayOneShot(xpSound);
         playerXP += 1;
+        levelController.difficulty += 1;
     }
 
     private IEnumerator ChangeXpAfterDelay(int amount, float delay)

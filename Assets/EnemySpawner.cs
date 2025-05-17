@@ -10,16 +10,20 @@ public class EnemySpawner : MonoBehaviour
 
     public float lastSpawn = 0.0f;
     public float spawnRate = 5.0f;
+
+    private LevelController levelController;
     
     void Start()
     {
-        
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        spawnRate = 5.0f / (1.0f + 0.1f * levelController.difficulty);
+
+        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
         {
             return;
         }   
