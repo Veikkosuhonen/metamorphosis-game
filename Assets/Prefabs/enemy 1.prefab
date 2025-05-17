@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a95cc90716be84249aa191817ee565da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: a95cc90716be84249aa191817ee565da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89,6 +97,7 @@ MonoBehaviour:
   dead: 0
   speed: 15
   upDownMovement: 1
+  initialY: 0
   deathSounds:
   - {fileID: 8300000, guid: 896c05c98f8d84525ab0c03888a5cc50, type: 3}
   - {fileID: 8300000, guid: 852617d3e84884b7e815bb681cda3c0e, type: 3}
