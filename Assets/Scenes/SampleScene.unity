@@ -615,9 +615,7 @@ MonoBehaviour:
   screenW: 800
   screenH: 600
   movementMultiplier: 10
-  confidenceThreshold: 0.5
-  head:
-    gameObject: {fileID: 2956901695736293191}
+  confidenceThreshold: 0.05
   CharacterParts:
   - gameObject: {fileID: 91078398}
   - gameObject: {fileID: 0}
@@ -4692,7 +4690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827970603777794808, guid: ec1e69bc1fec468cb515595b1a35dc6e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6882519971957791495, guid: ec1e69bc1fec468cb515595b1a35dc6e, type: 3}
       propertyPath: m_Name
@@ -5017,7 +5015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5164635930939511131, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.8077545
       objectReference: {fileID: 0}
     - target: {fileID: 5205739807772097574, guid: 8cc8733646614054844d399b7bd4aa5d, type: 3}
       propertyPath: m_Size

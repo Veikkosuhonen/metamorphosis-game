@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static PlayerModelManager;
+using UnityEngine.Device;
 
 public class PlayerModelManager : MonoBehaviour
 {
@@ -22,11 +24,11 @@ public class PlayerModelManager : MonoBehaviour
     public float screenH;
 
     public float movementMultiplier = 1.0f;
-    public float confidenceThreshold = 0.5f;
+    public float confidenceThreshold;
 
 
 
-    public CharacterPart head;
+    
 
     //keep at same size as the inferencecontrollers 
     public CharacterPart[] CharacterParts;
@@ -45,6 +47,14 @@ public class PlayerModelManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        UpdatePlayerAbsolute();
+       
+     
+    }
+
+
+    private void UpdatePlayerAbsolute()
     {
         for (int i = 0; i < inferenceController.humanPoses[0].bodyParts.Length; i++)
         {
@@ -76,7 +86,9 @@ public class PlayerModelManager : MonoBehaviour
                 Time.deltaTime * 10f
             );
         }
-       
-     
+
+
     }
 }
+
+
