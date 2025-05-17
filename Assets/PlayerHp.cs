@@ -21,11 +21,15 @@ public class PlayerHp : MonoBehaviour
     public void takeDamage(int damage)
     {
         hp -= damage;
-        hpDisplay.text = "HP: " + hp.ToString();
         if (hp <= 0)
         {
             Debug.Log("Player is dead!");
+            hpDisplay.text = "! YOU DIED !";
 
+        }
+        else
+        {
+            hpDisplay.text = "HP: " + hp.ToString();
         }
     }
   

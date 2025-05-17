@@ -1,6 +1,7 @@
 using CJM.HumanPose2DToolkit;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class PlayerModelManager : MonoBehaviour
     //keep at same size as the inferencecontrollers 
     public CharacterPart[] CharacterParts;
 
-
+    private PlayerHp playerHp;
 
 
 
@@ -57,17 +58,44 @@ public class PlayerModelManager : MonoBehaviour
         // Get the screen size
         screenW = UnityEngine.Screen.width;
         screenH = UnityEngine.Screen.height;
+
+        playerHp = gameObject.GetComponent<PlayerHp>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePlayerAbsolute();
-        pointHandForward(9, 7); //left
-        pointHandForward(10, 8); //right
+        if(playerHp.hp <= 0)
+        {
+            killPlayer();
+        }
+        else
+        {
+            UpdatePlayerAbsolute();
+            pointHandForward(9, 7); //left
+            pointHandForward(10, 8); //right
+        }
 
     }
 
+    void killPlayer()
+    {
+        for (int i = 0; i < CharacterParts.Length; i++)
+        {
+            Rigidbody rig = CharacterParts[i].gameObject.GetComponent<Rigidbody>();
+            if (rig)
+            {
+                CharacterParts[i].gameObject.GetComponent<Rigidbody>().useGravity = true;
+                CharacterParts[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            }
+            else
+            {
+                CharacterParts[i].gameObject.AddComponent<Rigidbody>();
+                CharacterParts[i].gameObject.GetComponent<Rigidbody>().useGravity = true;
+                CharacterParts[i].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
+    }
 
 
     private void pointHandForward(int handIndex, int elbowIndex)
