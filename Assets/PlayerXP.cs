@@ -31,7 +31,7 @@ public class PlayerXP : MonoBehaviour
         playerXP += amount;
         xpDisplay.text = "XP: " + playerXP.ToString();
 
-        if (playerXP >= 10)
+        if (playerXP >= (levels + 1) * 10)
         {
             levelController.startUpgrading();
             Debug.Log("Level Up! time to start upgrading!");

@@ -38,7 +38,8 @@ public class EnemyController : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
-        transform.position -= Vector3.right * speed * Time.deltaTime;
+        float actualSpeed = speed * (1.0f + 0.01f * levelController.difficulty);
+        transform.position -= Vector3.right * actualSpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, Mathf.Sin(Time.time + transform.position.x) * upDownMovement, 0.0f);
     }
 
