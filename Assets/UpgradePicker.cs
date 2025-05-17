@@ -7,8 +7,12 @@ public class UpgradePicker : MonoBehaviour
 {
 
     public PlayerModelManager.PartUpgrade PartUpgrade;
-    public TextMeshProUGUI upgradeText;
-    
+    public TextMeshPro upgradeText;
+
+    void Start()
+    {
+        upgradeText.text = PartUpgrade.ToString();
+    }
 
     public void SetUpgrade(PlayerModelManager.PartUpgrade upgrade)
     {
