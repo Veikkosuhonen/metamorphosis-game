@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         {
             SpawnEnemy();
             lastSpawn = Time.time;
-            randomOffset = Random.Range(-2.0f, 2.0f);
+            randomOffset = Random.Range(0.0f, 2.0f);
         }
     }
 
