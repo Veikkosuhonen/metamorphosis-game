@@ -5,6 +5,24 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public enum mode
+    {
+        manual,
+        automatic,
+    }
+
+    public mode spawnMode;
+
+    public enum group
+    {
+        left,
+        right,
+        top,
+    }
+
+    public group spawnGroup;
+
+
     // Start is called before the first frame update
     public float spawnedEnemySpeed;
     public GameObject enemyPrefab;
@@ -25,24 +43,29 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        spawnRate = 5.0f / (1.0f + 0.1f * levelController.difficulty);
 
-        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+        if (spawnMode == mode.automatic)
         {
-            return;
-        }   
+            spawnRate = 5.0f / (1.0f + 0.1f * levelController.difficulty);
+
+            if (GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().currentLevelState == LevelController.LevelState.Upgrading)
+            {
+                return;
+            }
 
 
-        //spawn enemy when spawnRate is reached
-        if (Time.time > lastSpawn + spawnRate + randomOffset)
-        {
-            SpawnEnemy();
-            lastSpawn = Time.time;
-            randomOffset = Random.Range(0.0f, 2.0f);
+            //spawn enemy when spawnRate is reached
+            if (Time.time > lastSpawn + spawnRate + randomOffset)
+            {
+                SpawnEnemy();
+                lastSpawn = Time.time;
+                randomOffset = Random.Range(0.0f, 2.0f);
+            }
+
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
         var prefabChoice = Random.Range(0, 4);
         var nextPrefab = enemyPrefab;
