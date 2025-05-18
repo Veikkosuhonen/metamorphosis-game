@@ -170,7 +170,7 @@ public class PlayerModelManager : MonoBehaviour
         
         if(upgrade == PartUpgrade.Wolverine)
         {
-            clawSizeMultiplier *= 1.5f;
+            clawSizeMultiplier *= 1.1f;
             increaseClawSize(9); //left
             increaseClawSize(10); //right
         }
