@@ -6,7 +6,7 @@ public class LevelController : MonoBehaviour
 {
 
     public float difficulty = 1;
-
+    
     public enum LevelState
     {
         Start,

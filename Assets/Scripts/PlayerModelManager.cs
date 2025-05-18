@@ -13,9 +13,7 @@ public class PlayerModelManager : MonoBehaviour
     {
         None,
         Wolverine,
-        Teeth,
-        Spiky,
-        Horns
+        Healing,
     }
     public List<PartUpgrade> unlockedUpgrades = new List<PartUpgrade>();
 
@@ -42,7 +40,7 @@ public class PlayerModelManager : MonoBehaviour
     public float movementMultiplierY = 1.0f;
     public float confidenceThreshold;
 
-
+    public float clawSizeMultiplier = 1.0f;
 
     
 
@@ -140,6 +138,8 @@ public class PlayerModelManager : MonoBehaviour
                 continue;
             }
 
+            
+
             CharacterParts[i].gameObject.transform.position = Vector3.Lerp(
                 CharacterParts[i].gameObject.transform.position,
                 new Vector3(x, y, CharacterParts[i].gameObject.transform.position.z),
@@ -153,8 +153,36 @@ public class PlayerModelManager : MonoBehaviour
     public void upgradeTo(PartUpgrade upgrade)
     {
 
-        unlockedUpgrades.Add(upgrade);
         Debug.Log(upgrade + " unlocked!");
+        unlockedUpgrades.Add(upgrade);
+        if (upgrade == PartUpgrade.None)
+        {
+            Debug.Log("No upgrade selected");
+            return;
+        }
+
+        if (upgrade == PartUpgrade.Healing)
+        {
+            Debug.Log("Healing the player!");
+            playerHp.hp += 100;
+            return;
+        }
+        
+        if(upgrade == PartUpgrade.Wolverine)
+        {
+            clawSizeMultiplier *= 1.5f;
+            increaseClawSize(9); //left
+            increaseClawSize(10); //right
+        }
+
+   
+    }
+
+
+    void increaseClawSize(int handIndex)
+    {
+        GameObject claw = CharacterParts[handIndex].gameObject;
+        claw.GetComponent<Hand>().growClaws(clawSizeMultiplier);
     }
 }
 

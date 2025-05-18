@@ -558,6 +558,7 @@ MonoBehaviour:
   movementMultiplierX: 20
   movementMultiplierY: 30
   confidenceThreshold: 0.5
+  clawSizeMultiplier: 1
   CharacterParts:
   - gameObject: {fileID: 91078398}
   - gameObject: {fileID: 818409090}
@@ -1250,6 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111ae9b1f27608a47beb878bb723cf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claws: []
 --- !u!1 &365323796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,7 +4630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 2
+  PartUpgrade: 0
   upgradeText: {fileID: 457862671}
 --- !u!65 &1281301132
 BoxCollider:
@@ -4795,7 +4797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 1
+  PartUpgrade: 2
   upgradeText: {fileID: 1991528448}
 --- !u!65 &1297264131
 BoxCollider:
@@ -4916,7 +4918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a9c02a7b44a32409877bd32db21a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PartUpgrade: 3
+  PartUpgrade: 1
   upgradeText: {fileID: 1853527395}
 --- !u!65 &1347252749
 BoxCollider:
@@ -5468,6 +5470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111ae9b1f27608a47beb878bb723cf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claws: []
 --- !u!224 &1588062938 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4556818524510064224, guid: b10bb37c28e5ef342931710ba93b9c71, type: 3}
