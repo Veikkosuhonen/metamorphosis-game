@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        spawnRate = 5.0f / (1.0f + 0.03f * levelController.difficulty);
+        spawnRate = 5.0f / (1.0f + 0.02f * levelController.difficulty);
 
         if (spawnMode == mode.automatic)
         {

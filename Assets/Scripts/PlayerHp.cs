@@ -14,12 +14,15 @@ public class PlayerHp : MonoBehaviour
     public AudioClip deathSound;
     private AudioSource audioSource;
 
+    private LevelController levelController;
+
 
     // Start is called before the first frame update
     void Start()
     {
         hpDisplay.text = "HP: " + hp.ToString();
         audioSource = GetComponent<AudioSource>();
+        levelController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
     }
 
 
@@ -33,6 +36,7 @@ public class PlayerHp : MonoBehaviour
             // Play the death sound
             audioSource.PlayOneShot(deathSound);
 
+            levelController.endGame();
         }
         else
         {

@@ -34,12 +34,12 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > trueStart + 10)
+        if (Time.time > trueStart + 10 && Time.time < trueStart + 30)
         {
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
             {
-                if(ep.spawnGroup == EnemySpawner.group.left)
+                if (ep.spawnGroup == EnemySpawner.group.left)
                 {
                     ep.spawnMode = EnemySpawner.mode.automatic;
                 }
@@ -47,11 +47,16 @@ public class LevelController : MonoBehaviour
         }
 
 
-        if (Time.time > trueStart + 30)
+
+        if (Time.time > trueStart + 30 && Time.time < trueStart + 60)
         {
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
             {
+                if (ep.spawnGroup == EnemySpawner.group.left)
+                {
+                    ep.spawnMode = EnemySpawner.mode.manual;
+                }
                 if (ep.spawnGroup == EnemySpawner.group.right)
                 {
                     ep.spawnMode = EnemySpawner.mode.automatic;
@@ -60,15 +65,31 @@ public class LevelController : MonoBehaviour
         }
 
 
-        if (Time.time > trueStart + 60)
+        if (Time.time > trueStart + 60 && Time.time < trueStart + 90)
         {
+
+            
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
             {
+                ep.spawnMode = EnemySpawner.mode.manual;
                 if (ep.spawnGroup == EnemySpawner.group.top)
                 {
                     ep.spawnMode = EnemySpawner.mode.automatic;
                 }
+            }
+        }
+        
+
+         if (Time.time > trueStart + 90)
+        {
+            
+            
+            //spawn enemies on the left
+            foreach (EnemySpawner ep in enemySpawners)
+            {
+                ep.spawnMode = EnemySpawner.mode.automatic;
+                
             }
         }
     }
