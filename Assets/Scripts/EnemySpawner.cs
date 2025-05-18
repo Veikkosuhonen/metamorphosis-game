@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
         var nextPrefab = enemyPrefab;
         if (prefabChoice == 0)
         {
-            enemyPrefab = enemy2Prefab;
+            nextPrefab = enemy2Prefab;
         }
 
         GameObject enemy = Instantiate(nextPrefab, transform.position, Quaternion.identity);
