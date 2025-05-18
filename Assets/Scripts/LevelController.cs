@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
 
-    List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
+    public List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
 
 
     public float difficulty = 1;
