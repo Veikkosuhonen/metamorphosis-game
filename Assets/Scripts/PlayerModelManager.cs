@@ -40,7 +40,7 @@ public class PlayerModelManager : MonoBehaviour
     public float movementMultiplierY = 1.0f;
     public float confidenceThreshold;
 
-    public float clawSizeMultiplier = 1.0f;
+    public float clawSizeMultiplier = 0.0f;
 
     
 
@@ -59,6 +59,8 @@ public class PlayerModelManager : MonoBehaviour
         screenH = UnityEngine.Screen.height;
 
         playerHp = gameObject.GetComponent<PlayerHp>();
+        increaseClawSize(9);
+        increaseClawSize(10);
     }
 
     // Update is called once per frame
@@ -170,7 +172,15 @@ public class PlayerModelManager : MonoBehaviour
         
         if(upgrade == PartUpgrade.Wolverine)
         {
-            clawSizeMultiplier *= 1.1f;
+            if (clawSizeMultiplier == 0.0f)
+            {
+                clawSizeMultiplier = 1.0f;
+            }
+            else
+            {
+                clawSizeMultiplier *= 1.2f;
+            }
+    
             increaseClawSize(9); //left
             increaseClawSize(10); //right
         }
