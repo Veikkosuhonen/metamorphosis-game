@@ -27,5 +27,7 @@ public class Hand : MonoBehaviour
         {
             claw.transform.localScale = new Vector3(claw.transform.localScale.x, claw.transform.localScale.y, claw.transform.localScale.z * multiplier);
         }
+
+        gameObject.GetComponent<BoxCollider>().size = new Vector3(gameObject.GetComponent<BoxCollider>().size.x * multiplier, gameObject.GetComponent<BoxCollider>().size.y, gameObject.GetComponent<BoxCollider>().size.z * multiplier);
     }
 }
