@@ -80,10 +80,12 @@ public class EnemyController : MonoBehaviour
             Vector3 fnormal = collision.contacts[0].normal;
             fnormal.z += Random.Range(-1.0f, 1.0f);
 
-            rbody.AddForce( fnormal * 10.0f, ForceMode.Impulse);
+            rbody.AddForce(fnormal * 10.0f, ForceMode.Impulse);
             rbody.AddTorque(fnormal * 1.0f, ForceMode.Impulse);
             GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerXP>().EnemyDefeated(this);
             PlayDeathSound();
+            
+            GetComponentInChildren<ParticleSystem>().Play();
         }
 
         if (collision.gameObject.CompareTag("Player") == true)
