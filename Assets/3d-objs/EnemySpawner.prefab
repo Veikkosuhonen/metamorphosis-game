@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedEnemySpeed: -15
   enemyPrefab: {fileID: 5272580853089546231, guid: 83b174696ea434c61b1c23363d648efc, type: 3}
+  enemy2Prefab: {fileID: 3302176645360062326, guid: ee700201554954add99c71b577cf204b, type: 3}
   lastSpawn: 0
   spawnRate: 0
   randomOffset: 0

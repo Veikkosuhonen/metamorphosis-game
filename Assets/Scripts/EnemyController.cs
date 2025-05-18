@@ -10,10 +10,10 @@ public class EnemyController : MonoBehaviour
     public float initialY = 0.0f;
 
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip[] deathSounds;
 
-    private LevelController levelController;
+    public LevelController levelController;
     // Start is called before the first frame update
     void Start()
     {
