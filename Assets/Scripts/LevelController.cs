@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time < trueStart + 10)
+        if(Time.time > trueStart + 10)
         {
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
@@ -47,7 +47,7 @@ public class LevelController : MonoBehaviour
         }
 
 
-        if (Time.time < trueStart + 30)
+        if (Time.time > trueStart + 30)
         {
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
@@ -60,7 +60,7 @@ public class LevelController : MonoBehaviour
         }
 
 
-        if (Time.time < trueStart + 60)
+        if (Time.time > trueStart + 60)
         {
             //spawn enemies on the left
             foreach (EnemySpawner ep in enemySpawners)
