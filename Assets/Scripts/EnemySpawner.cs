@@ -44,21 +44,17 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        var prefabChoice = Random.Range(0, 2);
-        var nextPrefab = enemy2Prefab;
+        var prefabChoice = Random.Range(0, 4);
+        var nextPrefab = enemyPrefab;
         if (prefabChoice == 0)
         {
-            // enemyPrefab = enemyPrefab;
-        }
-        else
-        {
-            nextPrefab = enemy2Prefab;
+            enemyPrefab = enemy2Prefab;
         }
 
         GameObject enemy = Instantiate(nextPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyController>().speed = spawnedEnemySpeed;
 
-        if (prefabChoice == 1 || true)
+        if (prefabChoice == 0)
         {
             enemy.GetComponent<EnemyController2>().target = GameObject.FindGameObjectWithTag("Player").transform;
         }
