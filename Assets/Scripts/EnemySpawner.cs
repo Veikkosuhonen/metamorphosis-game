@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     public float spawnedEnemySpeed;
     public GameObject enemyPrefab;
+    public GameObject enemy2Prefab;
 
     public float lastSpawn = 0.0f;
     public float spawnRate = 5.0f;
@@ -43,8 +44,25 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        var prefabChoice = Random.Range(0, 2);
+        var nextPrefab = enemy2Prefab;
+        if (prefabChoice == 0)
+        {
+            // enemyPrefab = enemyPrefab;
+        }
+        else
+        {
+            nextPrefab = enemy2Prefab;
+        }
+
+        GameObject enemy = Instantiate(nextPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<EnemyController>().speed = spawnedEnemySpeed;
+
+        if (prefabChoice == 1 || true)
+        {
+            enemy.GetComponent<EnemyController2>().target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         enemy.transform.forward = gameObject.transform.forward;
     }
 }
